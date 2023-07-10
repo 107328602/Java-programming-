@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class ex21 {
+      public static void main(String[] args) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(90)+10;//create a two digits numbers ,从10到99.
+        int randomDigit1 = randomNumber/10;//randomnumber 的十位数 除10取整
+        int randomDigit2 = randomNumber%10;//randomnumber 的个位数 除10取余
+        Scanner scanner = new Scanner(System.in);// 创建用于读取用户输入的 Scanner 对象
+        System.out.println("pls enter a two digits number :");
+        int userInput = scanner.nextInt();//让用户输入值
+        int userDigit1= userInput/10;
+        int userDigit2= userInput%10;
+        if(randomDigit1==userDigit1&&randomDigit2==userDigit2){
+            System.out.println("ur win 10000$");
+            System.out.println("the random number is "+randomNumber);
+        }
+        else if(randomDigit1==userDigit2&&randomDigit2==userDigit1){
+            System.out.println("u win 3000$");
+            System.out.println("the random number is "+randomNumber);
+        }
+        else if(randomDigit1==userDigit1||randomDigit1==userDigit2||randomDigit2==userDigit1||randomDigit2==userDigit2){
+            System.out.println("u win 1000$");
+            System.out.println("the random number is "+randomNumber);
+        }
+        else{
+            System.out.println("the number is not match ");
+            System.out.println("the random number is "+randomNumber);
+        }
+
+
+
+     
+ }
+}
